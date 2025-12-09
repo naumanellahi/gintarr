@@ -21,6 +21,8 @@ const quickLinks = [
 const legalLinks = [
   { name: "Privacy Policy", href: "/privacy" },
   { name: "Terms of Service", href: "/terms" },
+  { name: "Return Policy", href: "/return-policy" },
+  { name: "Refund Policy", href: "/refund-policy" },
 ];
 
 export const Footer = () => {
