@@ -24,7 +24,7 @@ const RefundPolicy = () => {
               transition={{ delay: 0.2 }}
               className="text-white/80"
             >
-              Last updated: December 2024
+              Last updated: December 2025
             </motion.p>
           </div>
         </section>
