@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, ArrowUp, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ScrollLink } from "@/components/ScrollLink";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -179,13 +180,13 @@ export const Footer = () => {
           </p>
           <div className="flex items-center gap-6">
             {legalLinks.map((link) => (
-              <Link
+              <ScrollLink
                 key={link.name}
                 to={link.href}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {link.name}
-              </Link>
+              </ScrollLink>
             ))}
           </div>
         </div>
