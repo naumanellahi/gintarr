@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, ArrowUp } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, ArrowUp, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const services = [
   "Plastering",
@@ -14,7 +15,6 @@ const quickLinks = [
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "Testimonials", href: "/testimonials" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -84,8 +84,8 @@ export const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <Link 
-                    to="/services" 
+                  <Link
+                    to="/services"
                     className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform" />
@@ -107,8 +107,8 @@ export const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    to={link.href} 
+                  <Link
+                    to={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-secondary group-hover:scale-150 transition-transform" />
@@ -135,6 +135,12 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="https://wa.me/447523197092" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-muted-foreground hover:text-green-400 transition-colors">
+                  <MessageCircle size={20} className="mt-0.5 text-green-400" />
+                  <span>WhatsApp Us</span>
+                </a>
+              </li>
+              <li>
                 <a href="mailto:Gpaskevicius50@gmail.com" className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors">
                   <Mail size={20} className="mt-0.5 text-accent" />
                   <span>Gpaskevicius50@gmail.com</span>
@@ -145,6 +151,21 @@ export const Footer = () => {
                 <span>58 Grosvenor Road, Romford, RM7 0QT, UK</span>
               </li>
             </ul>
+            {/* CTA Buttons */}
+            <div className="flex gap-3 mt-6">
+              <Button variant="gold" size="sm" asChild>
+                <a href="tel:07523197092">
+                  <Phone size={16} />
+                  Call
+                </a>
+              </Button>
+              <Button size="sm" asChild className="bg-green-500 hover:bg-green-600 text-white">
+                <a href="https://wa.me/447523197092" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle size={16} />
+                  WhatsApp
+                </a>
+              </Button>
+            </div>
           </motion.div>
         </div>
 
@@ -154,7 +175,7 @@ export const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Gintar Traders Ltd. All rights reserved.
+            © {new Date().getFullYear()} Gintar Traders Ltd. All rights reserved. Established December 2025.
           </p>
           <div className="flex items-center gap-6">
             {legalLinks.map((link) => (

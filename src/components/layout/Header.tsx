@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Menu, X } from "lucide-react";
+import { Phone, Mail, MapPin, Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -9,7 +9,6 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "Testimonials", href: "/testimonials" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -78,12 +77,18 @@ export const Header = () => {
               ))}
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden lg:flex items-center gap-4">
+            {/* CTA Buttons */}
+            <div className="hidden lg:flex items-center gap-3">
+              <Button variant="hero" size="default" asChild className="bg-green-500 hover:bg-green-600 border-green-500">
+                <a href="https://wa.me/447523197092" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle size={18} />
+                  WhatsApp
+                </a>
+              </Button>
               <Button variant="gold" size="lg" asChild>
                 <a href="tel:07523197092">
                   <Phone size={18} />
-                  Get Free Quote
+                  Call Now
                 </a>
               </Button>
             </div>
@@ -120,12 +125,20 @@ export const Header = () => {
                     {link.name}
                   </Link>
                 ))}
-                <Button variant="gold" size="lg" className="mt-4" asChild>
-                  <a href="tel:07523197092">
-                    <Phone size={18} />
-                    Call Now
-                  </a>
-                </Button>
+                <div className="flex flex-col gap-3 mt-4">
+                  <Button variant="gold" size="lg" asChild>
+                    <a href="tel:07523197092">
+                      <Phone size={18} />
+                      Call Now
+                    </a>
+                  </Button>
+                  <Button variant="hero" size="lg" asChild className="bg-green-500 hover:bg-green-600 border-green-500 text-white">
+                    <a href="https://wa.me/447523197092" target="_blank" rel="noopener noreferrer">
+                      <MessageCircle size={18} />
+                      WhatsApp
+                    </a>
+                  </Button>
+                </div>
               </nav>
             </div>
           </motion.div>

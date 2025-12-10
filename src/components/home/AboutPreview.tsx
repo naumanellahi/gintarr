@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, Users, Target, Lightbulb } from "lucide-react";
+import { Award, Sparkles, Target, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -10,9 +10,9 @@ const features = [
     description: "Every project reflects our commitment to excellence and attention to detail.",
   },
   {
-    icon: Users,
-    title: "Expert Team",
-    description: "Our skilled professionals bring years of experience to every job.",
+    icon: Sparkles,
+    title: "Modern Techniques",
+    description: "We use the latest methods and premium materials for superior results.",
   },
   {
     icon: Target,
@@ -64,11 +64,11 @@ export const AboutPreview = () => {
               >
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                    <span className="text-3xl font-display font-bold text-primary-foreground">15+</span>
+                    <Sparkles className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <div>
-                    <p className="font-display font-semibold text-foreground">Years of</p>
-                    <p className="text-muted-foreground">Experience</p>
+                    <p className="font-display font-semibold text-foreground">Newly</p>
+                    <p className="text-muted-foreground">Launched 2025</p>
                   </div>
                 </div>
               </motion.div>
@@ -89,13 +89,15 @@ export const AboutPreview = () => {
               About Us
             </span>
             <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
-              Building Excellence,{" "}
-              <span className="text-gradient">Delivering Trust</span>
+              Fresh Start,{" "}
+              <span className="text-gradient">Premium Quality</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              At Gintar Traders Ltd, we are passionate about transforming spaces into stunning 
-              masterpieces. With over 15 years of experience in construction and finishing, 
-              we've built a reputation for quality, reliability, and customer satisfaction.
+              Gintar Traders Ltd is a newly established premium construction and finishing 
+              service provider, launched in December 2025. We are passionate about transforming 
+              spaces into stunning masterpieces with modern techniques, quality materials, 
+              and exceptional craftsmanship. Our commitment is to deliver outstanding results 
+              that exceed your expectations.
             </p>
 
             {/* Features Grid */}
