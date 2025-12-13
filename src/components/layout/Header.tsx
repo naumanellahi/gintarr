@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { ScrollLink } from "@/components/ScrollLink";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -47,7 +48,7 @@ export const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3">
+            <ScrollLink to="/" className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
                 <span className="text-primary-foreground font-display font-bold text-xl">G</span>
               </div>
@@ -55,12 +56,12 @@ export const Header = () => {
                 <h1 className="font-display font-bold text-xl text-foreground">Gintar Traders</h1>
                 <p className="text-xs text-muted-foreground">Premium Construction</p>
               </div>
-            </Link>
+            </ScrollLink>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
-                <Link
+                <ScrollLink
                   key={link.name}
                   to={link.href}
                   className={`font-display font-medium text-sm transition-all duration-300 hover:text-primary relative group ${
@@ -73,7 +74,7 @@ export const Header = () => {
                       location.pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
-                </Link>
+                </ScrollLink>
               ))}
             </nav>
 
@@ -114,7 +115,7 @@ export const Header = () => {
             <div className="container mx-auto px-4 py-6">
               <nav className="flex flex-col gap-4">
                 {navLinks.map((link) => (
-                  <Link
+                  <ScrollLink
                     key={link.name}
                     to={link.href}
                     onClick={() => setIsOpen(false)}
@@ -123,7 +124,7 @@ export const Header = () => {
                     }`}
                   >
                     {link.name}
-                  </Link>
+                  </ScrollLink>
                 ))}
                 <div className="flex flex-col gap-3 mt-4">
                   <Button variant="gold" size="lg" asChild>
